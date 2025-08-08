@@ -1,4 +1,3 @@
-// import { USER } from "../interfaces/main.js";
 import { Enquiry } from "../Model/index.js";
 export class Consultancy {
     async makeEnquiry(dataRequest) {

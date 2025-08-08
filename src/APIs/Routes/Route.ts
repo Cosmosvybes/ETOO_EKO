@@ -3,5 +3,5 @@ import { getAllEnquiries, makeEnquiry } from "../endpoints/enquiries/index.js";
 
 export const ROUTER = express.Router();
 
-ROUTER.post("/", makeEnquiry);
+ROUTER.post("/enquiries", makeEnquiry);
 ROUTER.get("/clients-enquiry", getAllEnquiries);

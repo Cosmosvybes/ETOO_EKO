@@ -1,4 +1,5 @@
-import { Consultancy, requestData } from "../../../Controller/main.js";
+import { Consultancy } from "../../../Controller/main.js";
+import { requestData } from "../../../interfaces/main.js";
 import { getEnquiries } from "../../../Model/index.js";
 
 const etoEko = new Consultancy();
@@ -7,7 +8,6 @@ export async function makeEnquiry(req: any, res: any) {
   const bodyData: requestData = req.body;
   try {
     const response = await etoEko.makeEnquiry({ ...bodyData });
-
     return response?.insertedId
       ? res.status(200).send({
           responseMessage: "Enquiry Data successfully submitted",

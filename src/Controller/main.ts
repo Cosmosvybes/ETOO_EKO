@@ -1,12 +1,6 @@
 // import { USER } from "../interfaces/main.js";
+import { requestData } from "../interfaces/main.js";
 import { Enquiry } from "../Model/index.js";
-
-export type requestData = {
-  name: string;
-  email: string;
-  enquiryMessage: string;
-  date: string;
-};
 
 export class Consultancy {
   async makeEnquiry(dataRequest: requestData) {
@@ -17,4 +11,7 @@ export class Consultancy {
       console.log(error);
     }
   }
+
+
+  
 }

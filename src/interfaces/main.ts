@@ -1,9 +1,9 @@
 export interface USER {
   name: string;
   email: string;
-//   requestCategory: string;Con
-//   nationality: string;
-//   age: number;
+  //   requestCategory: string;Con
+  //   nationality: string;
+  //   age: number;
 }
 
 export interface enquiryData {
@@ -12,3 +12,9 @@ export interface enquiryData {
   enquiryMessage: string;
   date: string;
 }
+export type requestData = {
+  name: string;
+  email: string;
+  enquiryMessage: string;
+  date: string;
+};
