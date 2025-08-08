@@ -1,7 +1,5 @@
 import bodyParser from "body-parser";
 import express from "express";
-import dotenv from "dotenv";
-dotenv.config({ override: true });
 import { ROUTER } from "./APIs/Routes/Route.js";
 const PORT = process.env.PORT || 2025;
 const app = express();
