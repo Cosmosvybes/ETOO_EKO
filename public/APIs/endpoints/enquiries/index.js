@@ -1,6 +1,5 @@
-import { Consultancy } from "../../../Controller/main.js";
-import { getEnquiries } from "../../../Model/index.js";
-const etoEko = new Consultancy();
+import { ConsultancyEngine } from "../../../Controller/main.js";
+const etoEko = new ConsultancyEngine();
 export async function makeEnquiry(req, res) {
     const bodyData = req.body;
     try {
@@ -13,12 +12,12 @@ export async function makeEnquiry(req, res) {
             : res.status(500).send({ response: "Operation not successful" });
     }
     catch (error) {
-        res.status(503).send({ response: "Error occured" });
+        res.status(503).send({ response: "Service Unavailable" });
     }
 }
 export async function getAllEnquiries(req, res) {
     try {
-        const response = await getEnquiries();
+        const response = await etoEko.getAllEnquiriesRequest();
         return (response === null || response === void 0 ? void 0 : response.length) == 0
             ? res.status(404).send({ response: "No Data entry yet" })
             : res.status(200).send({ response });

@@ -1,6 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
-import { ROUTER } from "./APIs/Routes/Route.js";
+import { ROUTER } from "./APIs/v1/routes/Route.js";
 const PORT = process.env.PORT || 2025;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
