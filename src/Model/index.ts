@@ -9,3 +9,12 @@ export const Enquiry = async (data: enquiryData) => {
     console.log(error);
   }
 };
+
+export const getEnquiries = async () => {
+  try {
+    const data = enquiries.find({}).toArray();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
