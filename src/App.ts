@@ -13,5 +13,5 @@ app.use(cors({ optionsSuccessStatus: 200, origin: "*" }));
 app.use("/api/v1/", ROUTER);
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server  running on port ${PORT}`);
 });
