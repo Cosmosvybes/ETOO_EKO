@@ -1,6 +1,6 @@
 // import { USER } from "../interfaces/main.js";
 import { requestData } from "../interfaces/main.js";
-import { Enquiry, getAdmin, getEnquiries, SignUp } from "../model/index.js";
+import { Enquiry, getEnquiries, SignUp } from "../model/index.js";
 
 export class ConsultancyEngine {
   async makeEnquiry<
