@@ -2,7 +2,9 @@ import { enquiries } from "../utils/db/collections/index.js";
 import { admins } from "../utils/db/collections/index.js";
 export const Enquiry = async (data) => {
     try {
-        const response = await enquiries.insertOne(Object.assign({}, data));
+        const response = await enquiries.insertOne({
+            ...data,
+        });
         return response.insertedId;
     }
     catch (error) {

@@ -3,7 +3,10 @@ const etoEko = new ConsultancyEngine();
 export async function makeEnquiry(req, res) {
     const bodyData = req.body;
     try {
-        const response = await etoEko.makeEnquiry(Object.assign(Object.assign({}, bodyData), { date: new Date().toLocaleString("en-US", { hour12: true }) }));
+        const response = await etoEko.makeEnquiry({
+            ...bodyData,
+            date: new Date().toLocaleString("en-US", { hour12: true }),
+        });
         return response
             ? res.status(200).send({
                 responseMessage: "Enquiry Data successfully submitted",

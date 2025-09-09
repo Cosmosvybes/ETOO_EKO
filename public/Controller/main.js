@@ -2,7 +2,7 @@ import { Enquiry, getEnquiries, SignUp } from "../model/index.js";
 export class ConsultancyEngine {
     async makeEnquiry(dataRequest) {
         try {
-            const response = await Enquiry(Object.assign({}, dataRequest));
+            const response = await Enquiry({ ...dataRequest });
             return response;
         }
         catch (error) {
@@ -21,7 +21,7 @@ export class ConsultancyEngine {
     async SignUpAdminAccount(email, password) {
         try {
             const response = await SignUp(email, password);
-            return response === null || response === void 0 ? void 0 : response.insertedId;
+            return response?.insertedId;
         }
         catch (error) {
             return "Error occuered, opertaion failed";
