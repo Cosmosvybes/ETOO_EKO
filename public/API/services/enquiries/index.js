@@ -1,18 +1,18 @@
-import { ConsultancyEngine } from "../../../Controller/main.js";
+import { ConsultancyEngine } from "../../../controller/main.js";
 const etoEko = new ConsultancyEngine();
 export async function makeEnquiry(req, res) {
     const bodyData = req.body;
     try {
-        const response = await etoEko.makeEnquiry(Object.assign({}, bodyData));
-        return (response === null || response === void 0 ? void 0 : response.insertedId)
+        const response = await etoEko.makeEnquiry(Object.assign(Object.assign({}, bodyData), { date: new Date().toLocaleString("en-US", { hour12: true }) }));
+        return response
             ? res.status(200).send({
                 responseMessage: "Enquiry Data successfully submitted",
                 response,
             })
-            : res.status(500).send({ response: "Operation not successful" });
+            : res.status(503).send({ response: "Service Unavailable" });
     }
     catch (error) {
-        res.status(503).send({ response: "Service Unavailable" });
+        res.status(500).send({ response: "Operation not successful" });
     }
 }
 export async function getAllEnquiries(req, res) {

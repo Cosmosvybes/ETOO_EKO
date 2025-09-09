@@ -1,5 +1,4 @@
-import { Enquiry } from "../Model/index.js";
-import { getEnquiries } from "../Model/index.js";
+import { Enquiry, getEnquiries, SignUp } from "../model/index.js";
 export class ConsultancyEngine {
     async makeEnquiry(dataRequest) {
         try {
@@ -7,7 +6,7 @@ export class ConsultancyEngine {
             return response;
         }
         catch (error) {
-            console.log(error);
+            return "Error Occured, try again";
         }
     }
     async getAllEnquiriesRequest() {
@@ -16,7 +15,16 @@ export class ConsultancyEngine {
             return response;
         }
         catch (error) {
-            console.log(error);
+            return "Error Occured";
+        }
+    }
+    async SignUpAdminAccount(email, password) {
+        try {
+            const response = await SignUp(email, password);
+            return response === null || response === void 0 ? void 0 : response.insertedId;
+        }
+        catch (error) {
+            return "Error occuered, opertaion failed";
         }
     }
 }
