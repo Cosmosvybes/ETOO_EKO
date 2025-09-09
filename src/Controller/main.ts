@@ -1,4 +1,3 @@
-
 import { requestData } from "../interfaces/main.js";
 import { Enquiry, getEnquiries, SignUp } from "../model/index.js";
 

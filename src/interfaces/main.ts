@@ -18,3 +18,9 @@ export type requestData = {
   enquiryMessage: string;
   date: string;
 };
+export type quickContact = {
+  fullname: string;
+  phone: string;
+  email: string;
+  message: string;
+};
