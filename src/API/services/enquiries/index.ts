@@ -1,7 +1,7 @@
 
 
-import { ConsultancyEngine } from "../../../controller/main";
-import { requestData } from "../../../interfaces/main";
+import { ConsultancyEngine } from "../../../controller/main.js";
+import { requestData } from "../../../interfaces/main.js";
 
 
 const etoEko = new ConsultancyEngine();
