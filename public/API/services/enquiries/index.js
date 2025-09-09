@@ -1,4 +1,4 @@
-import { ConsultancyEngine } from "../../../controller/main.js";
+import { ConsultancyEngine } from "../../../controller/main";
 const etoEko = new ConsultancyEngine();
 export async function makeEnquiry(req, res) {
     const bodyData = req.body;
