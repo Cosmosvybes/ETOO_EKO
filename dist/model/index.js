@@ -1,4 +1,4 @@
-import { enquiries, quickContacts } from "../utils/db/collections/index.js";
+import { enquiries, feedbacks, quickContacts, } from "../utils/db/collections/index.js";
 import { admins } from "../utils/db/collections/index.js";
 export const Enquiry = async (data) => {
     try {
@@ -42,6 +42,15 @@ export const makeQuickContact = async (data) => {
     try {
         const response = await quickContacts.insertOne({ ...data });
         return response;
+    }
+    catch (error) {
+        console.log(error);
+    }
+};
+export const writeFeedBacks = async (data) => {
+    try {
+        const result = await feedbacks.insertOne({ ...data });
+        return result;
     }
     catch (error) {
         console.log(error);
